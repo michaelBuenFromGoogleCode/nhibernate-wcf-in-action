@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/TheEntities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TheEntities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Question">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answers" nillable="true" type="tns:ArrayOfAnswer" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="tns:ArrayOfQuestionComment" />
+      <xs:element minOccurs="0" name="Poster" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionId" type="xs:int" />
+      <xs:element minOccurs="0" name="TheQuestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Question" nillable="true" type="tns:Question" />
+  <xs:complexType name="ArrayOfAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Answer" nillable="true" type="tns:Answer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnswer" nillable="true" type="tns:ArrayOfAnswer" />
+  <xs:complexType name="Answer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="tns:ArrayOfAnswerComment" />
+      <xs:element minOccurs="0" name="Poster" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="tns:Question" />
+      <xs:element minOccurs="0" name="TheAnswer" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Answer" nillable="true" type="tns:Answer" />
+  <xs:complexType name="ArrayOfAnswerComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnswerComment" nillable="true" type="tns:AnswerComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnswerComment" nillable="true" type="tns:ArrayOfAnswerComment" />
+  <xs:complexType name="AnswerComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer" nillable="true" type="tns:Answer" />
+      <xs:element minOccurs="0" name="AnswerCommentId" type="xs:int" />
+      <xs:element minOccurs="0" name="Poster" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TheAnswerComment" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnswerComment" nillable="true" type="tns:AnswerComment" />
+  <xs:complexType name="QuestionComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Poster" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="tns:Question" />
+      <xs:element minOccurs="0" name="QuestionCommentId" type="xs:int" />
+      <xs:element minOccurs="0" name="TheQuestionComment" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuestionComment" nillable="true" type="tns:QuestionComment" />
+  <xs:complexType name="ArrayOfQuestionComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuestionComment" nillable="true" type="tns:QuestionComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuestionComment" nillable="true" type="tns:ArrayOfQuestionComment" />
+</xs:schema>
