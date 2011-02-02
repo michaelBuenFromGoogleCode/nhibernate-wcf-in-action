@@ -59,11 +59,13 @@ namespace WcfQuestionAndAnswer
             
             using (var s = SessionFactory.OpenSession() )
             {   
-                var q = from x in s.Query<Question>()
+                /*var q = from x in s.Query<Question>()
                         where x.QuestionId == questionId
                         select x;
+               
+                return q.Single(); */
 
-                return q.Single();
+                return s.Get<Question>(questionId);
             }
 
 
