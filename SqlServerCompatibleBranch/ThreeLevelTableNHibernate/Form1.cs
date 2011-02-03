@@ -46,6 +46,8 @@ namespace ThreeLevelTableNHibernate
 
         private void uxOpen_Click(object sender, EventArgs e)
         {
+
+            
             bdsQuestion.DataSource = _service.OpenQuestion(Convert.ToInt32(textBox1.Text));
 
             this.Text = ((Question)bdsQuestion.Current).QuestionId.ToString();

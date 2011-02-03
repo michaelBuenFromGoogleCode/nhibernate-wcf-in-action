@@ -24,6 +24,7 @@ namespace TheEntities.Mapper
 
             try
             {
+                
 
                 // Helpers.SessionFactoryBuilder.GetSessionFactory();
 
