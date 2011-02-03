@@ -58,15 +58,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntitiesMapper.cs" />
-    <Compile Include="Properties\EntitiesMapperHelpers.cs" />
+    <Compile Include="EntitiesMapperHelpers.cs" />
     <Compile Include="EntitiesMapperTester.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TheEntities\TheEntities.csproj">
       <Project>{53B32723-93E5-4C86-9BA3-9C94362FF9AB}</Project>
       <Name>TheEntities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
