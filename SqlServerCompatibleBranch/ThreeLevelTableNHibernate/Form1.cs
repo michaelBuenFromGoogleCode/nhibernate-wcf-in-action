@@ -36,8 +36,12 @@ namespace ThreeLevelTableNHibernate
 
 
             var q = (Question)bdsQuestion.Current; 
-            int n = _service.SaveQuestion(q);            
+            int n = _service.SaveQuestion(q);     
+       
+            // var retQ = _service.SaveTheQuestion
             q.QuestionId = n;
+
+            // MessageBox.Show(q.Comments[1].QuestionCommentId.ToString() + " " + q.Comments[1].TheQuestionComment);
 
             this.Text = n.ToString();
 
@@ -46,7 +50,7 @@ namespace ThreeLevelTableNHibernate
 
         private void uxOpen_Click(object sender, EventArgs e)
         {
-
+            
             
             bdsQuestion.DataSource = _service.OpenQuestion(Convert.ToInt32(textBox1.Text));
 
@@ -65,7 +69,19 @@ namespace ThreeLevelTableNHibernate
 
         private void answersBindingSource_ListChanged(object sender, ListChangedEventArgs e)
         {
-            if (answersBindingSource.Current == null) return;
+            if (answersBindingSource.Current == null)
+            {
+                answersCommentBindingSource.DataSource = null;
+                grdAnswerComment.ReadOnly = true;
+
+                uxAnswer.ReadOnly = true;
+                uxAnswerPoster.ReadOnly = true;
+                return;
+            }
+
+            uxAnswer.ReadOnly = false;
+            uxAnswerPoster.ReadOnly = false;
+
 
             var a = (Answer)answersBindingSource.Current;
 
@@ -76,27 +92,33 @@ namespace ThreeLevelTableNHibernate
             }
 
             answersCommentBindingSource.DataSource = a.Comments;
+            grdAnswerComment.ReadOnly = false;
         }
 
         private void answersCommentBindingSource_ListChanged(object sender, ListChangedEventArgs e)
         {
             if (answersCommentBindingSource.Current == null) return;
+            
 
-            var c = (AnswerComment)answersCommentBindingSource.Current;
+            if (answersCommentBindingSource.Current is AnswerComment)
+            {
+                var c = (AnswerComment)answersCommentBindingSource.Current;
 
-            if (c.Answer == null)
-                c.Answer = (Answer)answersBindingSource.Current;
+                if (c.Answer == null)
+                    c.Answer = (Answer)answersBindingSource.Current;
+            }
         }
 
         private void answersBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            if (answersBindingSource.Current == null) return;
+            if (answersBindingSource.Current == null)
+            {                
+                return;
+            }
 
             var a = (Answer)answersBindingSource.Current;
 
             answersCommentBindingSource.DataSource = a.Comments;
-
-         
         }
 
 

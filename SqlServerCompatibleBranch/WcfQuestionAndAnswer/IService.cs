@@ -35,6 +35,8 @@ namespace WcfQuestionAndAnswer
         Question OpenQuestion(int questionId);
          */
 
+        [OperationContract]
+        Question SaveQuestionReturnWhole(Question q);
     }
 
 

@@ -27,12 +27,16 @@ namespace TheEntities.Mapper.Helpers
                 .BuildSessionFactory();*/
 
 
-            _sf = Fluently.Configure()
+            /*_sf = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(@"Data Source=.\SQLExpress;Initial Catalog=q_and_a_also;Trusted_Connection=true"))
                 .Mappings(m => m.FluentMappings.AddFromNamespaceOf<QuestionMap>().Conventions.ForLowercaseSystem("_id"))
-                .BuildSessionFactory();
+                .BuildSessionFactory();*/
 
-            
+
+            _sf = Fluently.Configure()
+                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(@"Initial Catalog=q_and_a_also;Data Source=localhost;Integrated Security=SSPI;"))
+                .Mappings(m => m.FluentMappings.AddFromNamespaceOf<QuestionMap>().Conventions.ForLowercaseSystem("_id"))
+                .BuildSessionFactory();
             
 
             return _sf;

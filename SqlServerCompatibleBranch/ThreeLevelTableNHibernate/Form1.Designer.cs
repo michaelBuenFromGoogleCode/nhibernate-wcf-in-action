@@ -59,8 +59,8 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.uxAnswer = new System.Windows.Forms.TextBox();
+            this.uxAnswerPoster = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -332,22 +332,22 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // textBox5
+            // uxAnswer
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.answersBindingSource, "TheAnswer", true));
-            this.textBox5.Location = new System.Drawing.Point(6, 79);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(404, 201);
-            this.textBox5.TabIndex = 12;
+            this.uxAnswer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.answersBindingSource, "TheAnswer", true));
+            this.uxAnswer.Location = new System.Drawing.Point(6, 79);
+            this.uxAnswer.Multiline = true;
+            this.uxAnswer.Name = "uxAnswer";
+            this.uxAnswer.Size = new System.Drawing.Size(404, 201);
+            this.uxAnswer.TabIndex = 12;
             // 
-            // textBox4
+            // uxAnswerPoster
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.answersBindingSource, "Poster", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox4.Location = new System.Drawing.Point(12, 299);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(403, 20);
-            this.textBox4.TabIndex = 13;
+            this.uxAnswerPoster.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.answersBindingSource, "Poster", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.uxAnswerPoster.Location = new System.Drawing.Point(12, 299);
+            this.uxAnswerPoster.Name = "uxAnswerPoster";
+            this.uxAnswerPoster.Size = new System.Drawing.Size(403, 20);
+            this.uxAnswerPoster.TabIndex = 13;
             // 
             // label4
             // 
@@ -371,8 +371,8 @@
             // 
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.uxAnswerPoster);
+            this.groupBox1.Controls.Add(this.uxAnswer);
             this.groupBox1.Controls.Add(this.bindingNavigator1);
             this.groupBox1.Controls.Add(this.grdAnswerComment);
             this.groupBox1.Location = new System.Drawing.Point(12, 252);
@@ -490,8 +490,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox uxAnswer;
+        private System.Windows.Forms.TextBox uxAnswerPoster;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;

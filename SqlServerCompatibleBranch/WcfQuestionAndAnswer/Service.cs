@@ -77,9 +77,23 @@ namespace WcfQuestionAndAnswer
             using (var s = SessionFactory.OpenSession())
             using (var tx = s.BeginTransaction())
             {                
-                var qx = (Question)s.SaveOrUpdateCopy(q);
+                // var qx = (Question)s.SaveOrUpdateCopy(q);
+                var qx = (Question)s.Merge(q);
                 tx.Commit();
                 return qx.QuestionId;
+            }
+        }
+
+
+        public Question SaveQuestionReturnWhole(Question q)
+        {
+            using (var s = SessionFactory.OpenSession())
+            using (var tx = s.BeginTransaction())
+            {
+                // var qx = (Question)s.SaveOrUpdateCopy(q);
+                var qx = (Question)s.Merge(q);
+                tx.Commit();
+                return qx;
             }
         }
 
