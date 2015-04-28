@@ -1,0 +1,1 @@
+The entities are multi-level deep. In this code, we will show how .NET 4(and .NET 3.5 SP1)'s IsReference and NHibernate could persist whole object graph with ease.
